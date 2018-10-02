@@ -13,6 +13,7 @@ public class AppointmentGUI extends javax.swing.JFrame {
     /**
      * Creates new form AppointmentGUI
      */
+    AppointmentModell model = new AppointmentModell();
     public AppointmentGUI() {
         initComponents();
         jList1.setComponentPopupMenu(jPopupMenu1);
@@ -83,6 +84,12 @@ public class AppointmentGUI extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         AppointmentDlg dialog = new AppointmentDlg(this,true);
+        dialog.setVisible(true);
+        
+        if(dialog.isOk()){
+            Appointment apt = dialog.getTermin();
+            mod
+        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
