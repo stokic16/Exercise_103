@@ -17,6 +17,7 @@ public class AppointmentGUI extends javax.swing.JFrame {
     public AppointmentGUI() {
         initComponents();
         jList1.setComponentPopupMenu(jPopupMenu1);
+        jList1.setModel(model);
     }
 
     /**
@@ -48,6 +49,11 @@ public class AppointmentGUI extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("löschen");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("ändern");
@@ -91,6 +97,11 @@ public class AppointmentGUI extends javax.swing.JFrame {
             model.addApt(apt);
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        int idx = jList1.getSelectedIndex();
+        model.deleteApt(idx);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
