@@ -7,20 +7,20 @@ import java.time.format.DateTimeFormatter;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author kilia
  */
-public class AppointmentDlg extends javax.swing.JDialog {
+public class AppointmentDialog extends javax.swing.JDialog {
 
     /**
-     * Creates new form AppointmentDlg
+     * Creates new form AppointmentDialog
      */
-    private boolean ok=false;
+    private boolean ok = false;
     private Appointment termin;
     private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
-    public AppointmentDlg(java.awt.Frame parent, boolean modal) {
+
+    public AppointmentDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -35,24 +35,28 @@ public class AppointmentDlg extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(3, 2));
 
-        jLabel1.setText("Datum (dd.MM.yyyy HH:mm):");
+        jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        getContentPane().add(jTextField5);
 
-        jLabel6.setText("Text:");
-        getContentPane().add(jLabel6);
-        getContentPane().add(jTextField6);
+        jTextField1.setText("jTextField1");
+        getContentPane().add(jTextField1);
 
-        jButton1.setText("übernehmen");
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+
+        jTextField2.setText("jTextField2");
+        getContentPane().add(jTextField2);
+
+        jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -60,7 +64,7 @@ public class AppointmentDlg extends javax.swing.JDialog {
         });
         getContentPane().add(jButton1);
 
-        jButton2.setText("abbrechen");
+        jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -72,14 +76,14 @@ public class AppointmentDlg extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        termin = new Appointment(jTextField6.getText(),LocalDateTime.parse(jTextField5.getText(), dtf));
-        ok=true;
+        termin = new Appointment(jTextField1.getText(), LocalDateTime.parse(jTextField2.getText(), dtf));
+        ok = true;
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.dispose();
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public Appointment getTermin() {
@@ -90,13 +94,15 @@ public class AppointmentDlg extends javax.swing.JDialog {
         return ok;
     }
 
-    
+    public void setTermin(Appointment termin) {
+        this.termin = termin;
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -109,20 +115,20 @@ public class AppointmentDlg extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AppointmentDlg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppointmentDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AppointmentDlg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppointmentDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AppointmentDlg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppointmentDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AppointmentDlg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppointmentDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                AppointmentDlg dialog = new AppointmentDlg(new javax.swing.JFrame(), true);
+                AppointmentDialog dialog = new AppointmentDialog(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -138,8 +144,8 @@ public class AppointmentDlg extends javax.swing.JDialog {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

@@ -94,7 +94,7 @@ public class AppointmentGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        AppointmentDlg dialog = new AppointmentDlg(this,true);
+        AppointmentDialog dialog = new AppointmentDialog(this,true);
         dialog.setVisible(true);
         
         if(dialog.isOk()){
@@ -110,7 +110,7 @@ public class AppointmentGUI extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         int idx=jList1.getSelectedIndex();
-        AppointmentDlg dialog = new AppointmentDlg(this, true);
+        AppointmentDialog dialog = new AppointmentDialog(this, true);
         dialog.setTermin((Appointment)model.getElementAt(idx));
         dialog.setVisible(true);
         if(dialog.isOk()){
