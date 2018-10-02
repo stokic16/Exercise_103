@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
  *
  * @author kilia
  */
-public class AppointmentDlg extends javax.swing.JFrame {
+public class AppointmentDlg extends javax.swing.JDialog {
 
     /**
      * Creates new form AppointmentDlg
