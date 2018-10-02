@@ -76,7 +76,7 @@ public class AppointmentDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        termin = new Appointment(jTextField1.getText(), LocalDateTime.parse(jTextField2.getText(), dtf));
+        termin = new Appointment(jTextField2.getText(), LocalDateTime.parse(jTextField1.getText(), dtf));
         ok = true;
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
