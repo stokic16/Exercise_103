@@ -88,7 +88,7 @@ public class AppointmentGUI extends javax.swing.JFrame {
         
         if(dialog.isOk()){
             Appointment apt = dialog.getTermin();
-            mod
+            model.addApt(apt);
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
