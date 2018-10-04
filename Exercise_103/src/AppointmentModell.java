@@ -1,6 +1,9 @@
 
+import java.io.EOFException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.AbstractListModel;
@@ -38,6 +41,22 @@ public class AppointmentModell extends AbstractListModel {
         
         fos.flush();
         fos.close();
+    }
+        public void load(File f) throws Exception {
+        FileInputStream fis = new FileInputStream(f);
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        Object input;
+        try{
+            while ((input = ois.readObject()) != null) {
+            if (input instanceof Appointment) {
+                apts.add((Appointment) input);
+            }
+        }
+        }catch(EOFException ex){
+            ex.printStackTrace();
+        }
+        ois.close();
+        fis.close();
     }
 
     @Override
