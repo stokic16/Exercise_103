@@ -23,6 +23,7 @@ public class AppointmentDialog extends javax.swing.JDialog {
     public AppointmentDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+
     }
 
     /**
@@ -44,19 +45,19 @@ public class AppointmentDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(3, 2));
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Datum (dd.MM.yyyy HH:mm)");
         getContentPane().add(jLabel1);
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("23.04.2018 11:44");
         getContentPane().add(jTextField1);
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("Text");
         getContentPane().add(jLabel2);
 
-        jTextField2.setText("jTextField2");
+        jTextField2.setText("Test");
         getContentPane().add(jTextField2);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Ok");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -64,7 +65,7 @@ public class AppointmentDialog extends javax.swing.JDialog {
         });
         getContentPane().add(jButton1);
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -96,6 +97,10 @@ public class AppointmentDialog extends javax.swing.JDialog {
 
     public void setTermin(Appointment termin) {
         this.termin = termin;
+        if (termin != null) {
+            jTextField1.setText(dtf.format(termin.getTime()));
+            jTextField2.setText(termin.getText());
+        }
     }
 
     /**

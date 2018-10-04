@@ -32,6 +32,11 @@ public class Appointment implements Serializable{
     public void setTime(LocalDateTime time) {
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s ---> %s",time.toString(),text);
+    }
     
     
 }
