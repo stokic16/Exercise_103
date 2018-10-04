@@ -35,57 +35,57 @@ public class AppointmentDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        lbDate = new javax.swing.JLabel();
+        tfDate = new javax.swing.JTextField();
+        lbText = new javax.swing.JLabel();
+        tfText = new javax.swing.JTextField();
+        btOK = new javax.swing.JButton();
+        btCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(3, 2));
 
-        jLabel1.setText("Datum (dd.MM.yyyy HH:mm)");
-        getContentPane().add(jLabel1);
+        lbDate.setText("Datum (dd.MM.yyyy HH:mm)");
+        getContentPane().add(lbDate);
 
-        jTextField1.setText("23.04.2018 11:44");
-        getContentPane().add(jTextField1);
+        tfDate.setText("23.04.2018 11:44");
+        getContentPane().add(tfDate);
 
-        jLabel2.setText("Text");
-        getContentPane().add(jLabel2);
+        lbText.setText("Text");
+        getContentPane().add(lbText);
 
-        jTextField2.setText("Test");
-        getContentPane().add(jTextField2);
+        tfText.setText("Test");
+        getContentPane().add(tfText);
 
-        jButton1.setText("Ok");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btOK.setText("Ok");
+        btOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btOKActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
+        getContentPane().add(btOK);
 
-        jButton2.setText("Cancel");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btCancel.setText("Cancel");
+        btCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btCancelActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
+        getContentPane().add(btCancel);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        termin = new Appointment(jTextField2.getText(), LocalDateTime.parse(jTextField1.getText(), dtf));
+    private void btOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOKActionPerformed
+        termin = new Appointment(tfText.getText(), LocalDateTime.parse(tfDate.getText(), dtf));
         ok = true;
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btOKActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelActionPerformed
         this.dispose();
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btCancelActionPerformed
 
     public Appointment getTermin() {
         return termin;
@@ -98,8 +98,8 @@ public class AppointmentDialog extends javax.swing.JDialog {
     public void setTermin(Appointment termin) {
         this.termin = termin;
         if (termin != null) {
-            jTextField1.setText(dtf.format(termin.getTime()));
-            jTextField2.setText(termin.getText());
+            tfDate.setText(dtf.format(termin.getTime()));
+            tfText.setText(termin.getText());
         }
     }
 
@@ -146,11 +146,11 @@ public class AppointmentDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton btCancel;
+    private javax.swing.JButton btOK;
+    private javax.swing.JLabel lbDate;
+    private javax.swing.JLabel lbText;
+    private javax.swing.JTextField tfDate;
+    private javax.swing.JTextField tfText;
     // End of variables declaration//GEN-END:variables
 }
