@@ -1,3 +1,6 @@
+
+import java.io.File;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,6 +17,7 @@ public class AppointmentGUI extends javax.swing.JFrame {
      * Creates new form AppointmentGUI
      */
     AppointmentModell model = new AppointmentModell();
+    File f = new File("./appointments.ser");
     public AppointmentGUI() {
         initComponents();
         jList1.setComponentPopupMenu(jPopupMenu1);
@@ -67,6 +71,11 @@ public class AppointmentGUI extends javax.swing.JFrame {
         jPopupMenu1.add(jMenu1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jScrollPane1.setViewportView(jList1);
 
@@ -118,6 +127,14 @@ public class AppointmentGUI extends javax.swing.JFrame {
             model.changeApt(apt, idx);
         }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try{
+            model.save(f);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
