@@ -48,7 +48,7 @@ public class AppointmentGUI extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
 
-        jMenu1.setText("jMenu1");
+        jMenu1.setText("Termine");
 
         jMenuItem1.setText("hinzufügen");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {

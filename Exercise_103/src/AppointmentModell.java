@@ -53,7 +53,7 @@ public class AppointmentModell extends AbstractListModel {
             }
         }
         }catch(EOFException ex){
-            ex.printStackTrace();
+            
         }
         ois.close();
         fis.close();
