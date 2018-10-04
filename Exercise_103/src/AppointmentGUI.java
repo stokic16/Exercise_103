@@ -1,5 +1,6 @@
 
 import java.io.File;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,6 +23,11 @@ public class AppointmentGUI extends javax.swing.JFrame {
         initComponents();
         jList1.setComponentPopupMenu(jPopupMenu1);
         jList1.setModel(model);
+        try{
+            model.load(f);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Could not load any File!");
+        }
     }
 
     /**
